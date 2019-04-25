@@ -11,6 +11,8 @@ nmap <silent> <C-t> :NERDTreeToggle<CR>
 nmap <silent> <F2> :NERDTreeFind<CR>
 
 color dracula
+
+set cursorline
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
@@ -18,9 +20,17 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
-set number norelativenumber
+set number
 
 set expandtab shiftwidth=2 softtabstop=0 smarttab
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'js',
+    \  },
+  \}
 
-let g:javascript_plugin_jsdoc = 1
-
+hi CursorLine term=bold cterm=bold guibg=darkred
+set backupcopy=yes
+set nobackup
+set nowritebackup
